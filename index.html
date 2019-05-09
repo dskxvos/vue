@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id = "root">
+			<div>
+				<input v-model="inputValue"/>
+				<button @click="append">添加</button>
+				<button @click="del">删除</button>
+			</div>
+			<ul>
+				<!-- <li v-for="(item,index) in liList">{{item}}</li> -->
+				<!-- 使用 :进行属性传递   @del 监听子组件的del事件-->
+				<todo-item v-for="(item,index) in liList":content=item :index=index @del="del"></todo-item>
+			</ul>
+			
+			
+		</div>
+		
+		
+		
+		
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script src="js/vue-resource.js"></script>
+		<script src="js/index.js"></script>
+	</body>
+</html>

@@ -10,13 +10,16 @@
 			<!-- 遍历的时候 （）里面的 第一个值为对象，第二个为index 索引 下标 -->
 			<li v-for="(item,index) in userList">
 				<div>{{item.name}}</div>
-				<div>{{item.age}}</div>
+				<!-- 过滤器 | -->
+				<div>{{item.age | age("aaa")}}</div>
 				<!-- 绑定属性v-bind -->
-				<img v-bind:src="item.img" />
+				<!-- <img v-bind:src="item.img" /> -->
 			</li>
+			
 			
 			<input type="number" v-model="number" />
 			<span>{{number*5}}</span>
+			<button @click="add"></button>
 		</div>
 		
 		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
